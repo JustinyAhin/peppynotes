@@ -1,0 +1,26 @@
+<div class="edit-peppy home-peppies-container">
+
+    <div class="single-peppy-container">
+        <div class="single-peppy-content">
+            <h1><%= @peppy.title %></h1>
+            <p><%= @peppy.content %></p>
+        </div>
+    </div>
+
+    <div class="single-peppy-container single-peppy-form">
+    
+        <%= form_tag "/#{@peppy.id}", method: "patch" do %>
+            <input type="text" name="title" placeholder="Peppy title" /><br>
+            <p><%= @peppy.errors[:title].first %></p>
+            <textarea name="content" placeholder="Peppy content" rows="10"></textarea><br>
+            <input type="submit" value="Edit peppy">
+        <% end %>
+
+    </div>
+
+    <%= form_tag "/#{@peppy.id}", method: "delete" do %>
+        <input class="delete-peppy" type="submit" value="Delete the peppy">
+    <% end %>
+
+
+</div>

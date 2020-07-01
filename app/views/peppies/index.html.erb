@@ -1,0 +1,21 @@
+<div class="home-peppies-container">
+    <div class="single-peppy-container single-peppy-form">
+        <%= form_tag "/", method: "post" do %>
+            <input type="text" name="title" placeholder="Peppy title" /><br>
+            <textarea name="content" placeholder="Peppy content" rows="15"></textarea><br>
+            <input type="submit" value="Add peppy">
+        <% end %>
+    </div>
+
+    <% @peppies.each do |peppy| %>
+        <div class="single-peppy-container">
+            <div class="single-peppy-content">
+                <h2>
+                    <a href="/<%= peppy.id %>"><%= peppy.title %></a>
+                </h2>
+                <p><%= peppy.content %></p>
+                <a href="/edit/<%= peppy.id %>">Update peppy</a>
+            </div>
+        </div>
+    <% end %>
+</div>

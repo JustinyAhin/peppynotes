@@ -1,0 +1,108 @@
+// Place all the styles related to the Peppies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@mixin form-button {
+  border: 1px solid #d2d6dc;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 1.245rem;
+  padding: 0.75rem;
+}
+
+.single-peppy-container {
+  background-color: #23282d;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.45);
+  border-radius: 10px;
+  height: max-content;
+  max-height: 30rem;
+  overflow: hidden;
+  color: whitesmoke;
+  border: solid white;
+
+  .single-peppy-content,
+  form {
+    padding: 1.245rem;
+  }
+
+  .single-peppy-content {
+    h2 {
+      margin-top: 0;
+
+      a {
+        text-decoration: none;
+      }
+    }
+    p {
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  a,
+  a:visited {
+    color: whitesmoke;
+  }
+}
+
+.single-peppy-form {
+  height: auto;
+  background-color: whitesmoke;
+
+  input,
+  textarea {
+    @include form-button;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  input:focus,
+  textarea:focus {
+    box-shadow: 0 0 0 3px rgba(164, 202, 254, 0.45);
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #23282d;
+    color: whitesmoke;
+  }
+}
+
+.home-peppies-container {
+  margin: 5rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 1.5rem;
+}
+
+.edit-peppy {
+  .single-peppy-container {
+    max-height: max-content;
+  }
+
+  .single-peppy-form {
+    max-height: 30rem;
+  }
+
+  .delete-peppy {
+    @include form-button;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #23282d;
+    color: whitesmoke;
+  }
+}
