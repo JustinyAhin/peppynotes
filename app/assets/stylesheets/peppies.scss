@@ -83,6 +83,12 @@
   grid-gap: 1.5rem;
 }
 
+@media (max-width: 425px) {
+  .home-peppies-container {
+    display: block;
+  } 
+}
+
 .edit-peppy {
   .single-peppy-container {
     max-height: max-content;
