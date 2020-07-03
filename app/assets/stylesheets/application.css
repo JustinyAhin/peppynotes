@@ -35,3 +35,8 @@ body {
   text-align: center;
   font-weight: bold;
 }
+
+.home-app-name a {
+  color: #191e23;
+  text-decoration: none;
+}
